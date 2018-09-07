@@ -1,0 +1,3 @@
+[submodule "docs/themes/chef"]
+	path = docs/themes/chef
+	url = git@github.com:chef/chef-hugo-theme.git

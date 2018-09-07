@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/docs/getting-started/04-kitchen-yml/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/13-adding-feature/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/12-adding-platform/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/16-adding-recipe/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/14-adding-suite/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/15-adding-test/</loc>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/03-creating-cookbook/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/examples/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/17-excluding-platforms/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/faq/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/02-getting-help/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/glossary/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/01-installing/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/05-instances/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/00-introduction/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/08-manually-verifying/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/18-next-steps/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/06-writing-recipe/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/09-writing-test/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/07-running-converge/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/11-running-test/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/drivers/vagrant/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/getting-started/10-running-verify/</loc>
+  </url>
+  
+</urlset>

@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Adding a Platform</title>
+<link rel="shortcut icon" type="image/png" href="/images/favicon.ico" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
+  <link rel="stylesheet" href="/css/chef-sh.css" />
+</head>
+
+<body>
+  <div class="off-canvas-wrapper has-sidebar">
+    <div class="off-canvas-content" data-off-canvas-content>
+      <div class="cell small-12">
+        <nav id="utility-bar" class="utility-bar" data-toggler="active">
+  <div class="grid-container">
+    <div class="grid-x align-right">
+      <div class="cell medium-7 utility-bar-wrapper text-right">
+        <button type="button" class="utility-bar-button" data-toggle="utility-bar">
+          <span class="show-for-medium">Explore the <span class="chef-logo"><span class="sr-only">Chef</span></span> Automation Portfolio</span>
+          <span class="show-for-small-only">Chef Automation</span>
+          <span class="arrow"><span class="sr-only">Expand</span></span>
+        </button>
+        <div class="utility-bar-content text-left">
+          <div class="grid-x">
+            <div class="oss-projects grid-x" data-equalizer>
+              <div class="cell medium-4">
+                <a href="https://chef.sh">
+                  <div data-equalizer-watch><img src="/images/chef-logo.svg" alt="Chef" width="131" class="chef"></div>
+                  <p>Ensure configurations are applied consistently in every environment, at any scale.</p>
+                </a>
+              </div>
+              <div class="cell medium-4">
+                <a href="https://inspec.io">
+                  <div data-equalizer-watch><img src="/images/inspec-logo.svg" alt="Inspec" width="133" class="inspec"></div>
+                  <p>Automate the validation of compliance and security in any environment, on any platform.</p>
+                </a>
+              </div>
+              <div class="cell medium-4">
+                <a href="https://habitat.sh">
+                  <div data-equalizer-watch><img src="/images/habitat-logo.svg" alt="Habitat" width="111" class="habitat"></div>
+                  <p>Automate the process of building, deploying, and managing any application in any environment.</p>
+                </a>
+              </div>
+            </div>
+            <div class="automate cell small-12">
+              <div class="cell small-12">
+                <a href="https://automate.chef.io" class="with-arrow-button">
+                  <img src="/images/chef-automate-logo.svg" alt="Chef Automate" width="217" class="chef-automate">
+                  <p>Build, deploy, and manage faster, more efficiently, and with less risk with Chef Automate, the continuous automation platform.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+      </div>
+      <div id="menu" class="cell small-12" data-sticky-container>
+        
+
+<nav data-sticky class="sticky" style="min-width:100%;" data-check-every="0" data-sticky-on="small" data-margin-top="0" data-top-anchor="utility-bar:bottom">
+  <header>
+    <div class="grid-container">
+      <div class="grid-x">
+        <div id="header-logo" class="cell large-3 small-11">
+          <a href="/"><img src="/images/chef-logo.svg" alt="Kitchen Documentation"></a>
+        </div>
+        <div id="header-toggle" data-responsive-toggle="header-menu" data-hide-for="large" class="cell small-1">
+          <div class="valign-small">
+            <button type="button" data-toggle="header-menu" aria-label="Menu"><i aria-hidden="true" class="fas fa-bars fa-lg"></i></button>
+          </div>
+        </div>
+        <div id="header-menu" class="cell large-9 small-12">
+          <ul class="vertical medium-horizontal menu">
+            
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </header>
+</nav>
+
+      </div>
+      <div id="main-content" class="cell small-12" data-sticky-container>
+        <div class="grid-container">
+          <div class="grid-x">
+            <div class="cell medium-3 col-sidebar">
+              
+
+
+<aside class="sticky" data-sticky data-anchor="main-content-col" data-margin-top="4" data-margin-bottom="2">
+  <nav id="sidebar-nav">
+    
+    <div class="search">
+      <form class="basic-form" method="" action="">
+  <input id="doc-search" type="text" name="search" value="" placeholder="Search Documentation">
+</form>
+
+    </div>
+    
+    
+    <div class="nav">
+      <ul class="vertical menu accordion-menu" data-accordion-menu>
+        
+          
+            
+              <li>
+                <a href="">Getting Started</a>
+                <ul class="menu vertical nested is-active">
+                  
+                  <li><a href="/docs/getting-started/00-introduction/">Introduction</a></li>
+                  
+                  <li><a href="/docs/getting-started/01-installing/">Installing</a></li>
+                  
+                  <li><a href="/docs/getting-started/02-getting-help/">Getting Help</a></li>
+                  
+                  <li><a href="/docs/getting-started/03-creating-cookbook/">Creating a Cookbook</a></li>
+                  
+                  <li><a href="/docs/getting-started/04-kitchen-yml/">.kitchen.yml</a></li>
+                  
+                  <li><a href="/docs/getting-started/05-instances/">Instances</a></li>
+                  
+                  <li><a href="/docs/getting-started/06-writing-recipe/">Writing a Recipe</a></li>
+                  
+                  <li><a href="/docs/getting-started/07-running-converge/">kitchen converge</a></li>
+                  
+                  <li><a href="/docs/getting-started/08-manually-verifying/">Manually Verifying</a></li>
+                  
+                  <li><a href="/docs/getting-started/09-writing-test/">Writing a Test</a></li>
+                  
+                  <li><a href="/docs/getting-started/10-running-verify/">kitchen-verify</a></li>
+                  
+                  <li><a href="/docs/getting-started/11-running-test/">kitchen test</a></li>
+                  
+                  <li class="active"><a href="/docs/getting-started/12-adding-platform/">Adding a Platform</a></li>
+                  
+                  <li><a href="/docs/getting-started/13-adding-feature/">Adding a New Feature</a></li>
+                  
+                  <li><a href="/docs/getting-started/14-adding-suite/">Adding a Suite</a></li>
+                  
+                  <li><a href="/docs/getting-started/15-adding-test/">Adding a Test</a></li>
+                  
+                  <li><a href="/docs/getting-started/16-adding-recipe/">Adding a Recipe</a></li>
+                  
+                  <li><a href="/docs/getting-started/17-excluding-platforms/">Excluding Platforms</a></li>
+                  
+                  <li><a href="/docs/getting-started/18-next-steps/">Next Steps</a></li>
+                  
+                </ul>
+              </li>
+            
+          
+            
+              <li>
+                <a href="">Drivers</a>
+                <ul class="menu vertical nested">
+                  
+                  <li><a href="/docs/drivers/vagrant/">kitchen-vagrant</a></li>
+                  
+                </ul>
+              </li>
+            
+          
+            
+              <li>
+                <a href="">Reference</a>
+                <ul class="menu vertical nested">
+                  
+                  <li><a href="/docs/examples/">Examples</a></li>
+                  
+                  <li><a href="/docs/faq/">FAQ</a></li>
+                  
+                  <li><a href="/docs/glossary/">Glossary</a></li>
+                  
+                </ul>
+              </li>
+            
+          
+            
+              <li><a href="">Troubleshooting</a></li>
+            
+          
+        
+      </ul>
+    </div>
+  </nav>
+</aside>
+
+            </div>
+            <div id="main-content-col" class="cell medium-9 col-content">
+              
+<h1>Adding a Platform</h1>
+<div class="prose">
+  <p>Now that we have Ubuntu working, let&rsquo;s add support for CentOS to our cookbook. This shouldn&rsquo;t be too bad. Open <code>.kitchen.yml</code> in your editor and the <code>centos-7</code> line to your platforms list so that it resembles:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+driver<span style="color:#111">:</span>
+  name<span style="color:#111">:</span> vagrant
+
+provisioner<span style="color:#111">:</span>
+  name<span style="color:#111">:</span> chef_zero
+
+verifier<span style="color:#111">:</span>
+  name<span style="color:#111">:</span> inspec
+
+platforms<span style="color:#111">:</span>
+  - name<span style="color:#111">:</span> ubuntu-<span style="color:#ae81ff">16.04</span>
+  - name<span style="color:#111">:</span> centos-<span style="color:#ae81ff">7</span>
+
+suites<span style="color:#111">:</span>
+  - name<span style="color:#111">:</span> default
+    run_list<span style="color:#111">:</span>
+      - recipe<span style="color:#111">[</span>git_cookbook<span style="color:#111">::</span>default<span style="color:#111">]</span>
+    verifier<span style="color:#111">:</span>
+      inspec_tests<span style="color:#111">:</span>
+        - test/smoke/default
+    attributes<span style="color:#111">:</span></code></pre></div>
+<p>Now let&rsquo;s check the status of our instances:</p>
+
+<pre><code>$ kitchen list
+Instance             Driver   Provisioner  Verifier  Transport  Last Action    Last Error
+default-ubuntu-1604  Vagrant  ChefZero     Inspec    Ssh        &lt;Not Created&gt;  &lt;None&gt;
+default-centos-7     Vagrant  ChefZero     Inspec    Ssh        &lt;Not Created&gt;  &lt;None&gt;
+</code></pre>
+
+<p>We&rsquo;re going to use two shortcuts in the next command:</p>
+
+<ul>
+<li>Each instance has a simple state machine that tracks where it is in its lifecycle. Given its current state and the desired state, the instance is smart enough to run all actions in between current and desired.</li>
+<li>Any <code>kitchen</code> subcommand that takes an instance name as an argument can take a Ruby regular expression that will be used to glob a list of instances together. This means that <code>kitchen test ubuntu</code> would run the <strong>test</strong> action on all instances that had <code>ubuntu</code> in their name. Note that the <strong>list</strong> subcommand also takes the regex-globbing argument so feel free to experiment there.</li>
+</ul>
+
+<p>In our next example we&rsquo;ll select the <code>default-centos-7</code> instance with simply <code>7</code> and will take it from uncreated to verified in one command.</p>
+
+<p>Let&rsquo;s see how CentOS runs our cookbook:</p>
+
+<pre><code>kitchen verify 7
+-----&gt; Starting Kitchen (v1.16.0)
+-----&gt; Creating &lt;default-centos-7&gt;...
+       Bringing machine 'default' up with 'virtualbox' provider...
+       ==&gt; default: Importing base box 'bento/centos-7'...
+==&gt; default: Matching MAC address for NAT networking...
+       ==&gt; default: Checking if box 'bento/centos-7' is up to date...
+       ==&gt; default: Setting the name of the VM: kitchen-git_cookbook-default-centos-7_default_1494253442790_20368
+       ==&gt; default: Clearing any previously set network interfaces...
+       ==&gt; default: Preparing network interfaces based on configuration...
+           default: Adapter 1: nat
+       ==&gt; default: Forwarding ports...
+           default: 22 (guest) =&gt; 2222 (host) (adapter 1)
+       ==&gt; default: Booting VM...
+       ==&gt; default: Waiting for machine to boot. This may take a few minutes...
+           default: SSH address: 127.0.0.1:2222
+           default: SSH username: vagrant
+           default: SSH auth method: private key
+           default: Warning: Connection reset. Retrying...
+           default: Warning: Remote connection disconnect. Retrying...
+           default: Warning: Connection reset. Retrying...
+           default: Warning: Remote connection disconnect. Retrying...
+           default: Warning: Connection reset. Retrying...
+           default: Warning: Remote connection disconnect. Retrying...
+           default: Warning: Connection reset. Retrying...
+           default: Warning: Remote connection disconnect. Retrying...
+           default: Warning: Connection reset. Retrying...
+           default:
+           default: Vagrant insecure key detected. Vagrant will automatically replace
+           default: this with a newly generated keypair for better security.
+           default:
+           default: Inserting generated public key within guest...
+           default: Removing insecure key from the guest if it's present...
+           default: Key inserted! Disconnecting and reconnecting using new SSH key...
+       ==&gt; default: Machine booted and ready!
+       ==&gt; default: Checking for guest additions in VM...
+       ==&gt; default: Setting hostname...
+       ==&gt; default: Mounting shared folders...
+           default: /tmp/omnibus/cache =&gt; /Users/cheeseplus/.kitchen/cache
+       ==&gt; default: Machine not provisioned because `--no-provision` is specified.
+       [SSH] Established
+       Vagrant instance &lt;default-centos-7&gt; created.
+       Finished creating &lt;default-centos-7&gt; (0m42.13s).
+-----&gt; Converging &lt;default-centos-7&gt;...
+       Preparing files for transfer
+       Preparing dna.json
+       Resolving cookbook dependencies with Berkshelf 5.6.4...
+       Removing non-cookbook files before transfer
+       Preparing validation.pem
+       Preparing client.rb
+-----&gt; Installing Chef Omnibus (13)
+       Downloading https://omnitruck.chef.io/install.sh to file /tmp/install.sh
+       Trying wget...
+       Download complete.
+       el 7 x86_64
+       Getting information for chef stable 13 for el...
+       downloading https://omnitruck.chef.io/stable/chef/metadata?v=13&amp;p=el&amp;pv=7&amp;m=x86_64
+         to file /tmp/install.sh.3984/metadata.txt
+       trying wget...
+       sha1     f0eac57e53833d710334839fbe4e9b940d1c43c6
+       sha256   a3cb30fe2eb6e3ce5ea8914635d01562660f4978568fa3303b14336eefdb09ee
+       url      https://packages.chef.io/files/stable/chef/13.0.118/el/7/chef-13.0.118-1.el7.x86_64.rpm
+       version  13.0.118
+       downloaded metadata file looks valid...
+       /tmp/omnibus/cache/chef-13.0.118-1.el7.x86_64.rpm already exists, verifiying checksum...
+       Comparing checksum with sha256sum...
+       checksum compare succeeded, using existing file!
+       Installing chef 13
+       installing with rpm...
+       warning: /tmp/omnibus/cache/chef-13.0.118-1.el7.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 83ef826a: NOKEY
+       Preparing...                          ################################# [100%]
+       Updating / installing...
+          1:chef-13.0.118-1.el7              ################################# [100%]
+       Thank you for installing Chef!
+       Transferring files to &lt;default-centos-7&gt;
+       Starting Chef Client, version 13.0.118
+       Creating a new client identity for default-centos-7 using the validator key.
+       resolving cookbooks for run list: [&quot;git_cookbook::default&quot;]
+       Synchronizing Cookbooks:
+         - git_cookbook (0.1.0)
+       Installing Cookbook Gems:
+       Compiling Cookbooks...
+       Converging 2 resources
+       Recipe: git_cookbook::default
+         * yum_package[git] action install
+           - install version 1.8.3.1-6.el7_2.1 of package git
+         * log[Well, that was too easy] action write
+
+
+       Running handlers:
+       Running handlers complete
+       Chef Client finished, 2/2 resources updated in 12 seconds
+       Finished converging &lt;default-centos-7&gt; (0m27.28s).
+-----&gt; Setting up &lt;default-centos-7&gt;...
+       Finished setting up &lt;default-centos-7&gt; (0m0.00s).
+-----&gt; Verifying &lt;default-centos-7&gt;...
+       Loaded tests from test/smoke/default
+
+Profile: tests from test/smoke/default
+Version: (not specified)
+Target:  ssh://vagrant@127.0.0.1:2222
+
+
+  System Package
+     ✔  git should be installed
+
+Test Summary: 1 successful, 0 failures, 0 skipped
+       Finished verifying &lt;default-centos-7&gt; (0m1.52s).
+-----&gt; Kitchen is finished. (1m11.96s)
+</code></pre>
+
+<p>Nice! We&rsquo;ve verified that our cookbook works on Ubuntu 16.04 and CentOS 7.3. Since the CentOS instance will hang out for no good reason, let&rsquo;s kill it for now:</p>
+
+<pre><code>kitchen destroy
+-----&gt; Starting Kitchen (v1.16.0)
+-----&gt; Destroying &lt;default-ubuntu-1604&gt;...
+       Finished destroying &lt;default-ubuntu-1604&gt; (0m0.00s).
+-----&gt; Destroying &lt;default-centos-7&gt;...
+       ==&gt; default: Forcing shutdown of VM...
+       ==&gt; default: Destroying VM and associated drives...
+       Vagrant instance &lt;default-centos-7&gt; destroyed.
+       Finished destroying &lt;default-centos-7&gt; (0m4.96s).
+-----&gt; Kitchen is finished. (0m6.04s)
+</code></pre>
+
+<p>Interesting. Kitchen tried to destroy both instances, one that was created and the other that was not. Which brings us to another tip with the <code>kitchen</code> command:</p>
+
+<blockquote>
+<p><strong>Any <code>kitchen</code> subcommand without an instance argument will apply to all instances.</strong></p>
+</blockquote>
+
+<p>Let&rsquo;s make sure everything has been destroyed:</p>
+
+<pre><code>$ kitchen list
+Instance             Driver   Provisioner  Verifier  Transport  Last Action    Last Error
+default-ubuntu-1604  Vagrant  ChefZero     Inspec    Ssh        &lt;Not Created&gt;  &lt;None&gt;
+default-centos-7     Vagrant  ChefZero     Inspec    Ssh        &lt;Not Created&gt;  &lt;None&gt;
+</code></pre>
+
+<div class="sidebar--footer">
+<a class="button primary-cta" href="/docs/getting-started/adding-feature">Next - Adding a Feature</a>
+<a class="sidebar--footer--back" href="/docs/getting-started/running-test">Back to previous step</a>
+</div>
+
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer" class="cell small-12">
+        <div class="grid-x">
+          <div class="cell small-12">
+            <nav>
+              
+<footer>
+  <div class="grid-container">
+    <div class="grid-x align-middle">
+      <div class="cell small-12 large-3 logo"><a href="/"><img src="/images/chef-logo-light.svg" alt="Kitchen Documentation"></a></div>
+      <div class="cell small-12 large-9">
+        <ul class="menu vertical medium-horizontal">
+          <li><a href="https://www.chef.io/online-master-agreement/" target="_blank">Licensing</a></li>
+          <li><a href="https://www.chef.io/terms-of-service/" target="_blank">Terms &amp; Conditions</a></li>
+          <li><a href="https://www.chef.io/trademark-policy/" target="_blank">Trademark Policy</a></li>
+          <li><a href="https://www.chef.io/privacy-policy/" target="_blank">Privacy Policy</a></li>
+          <li><a href="https://www.chef.io/cookie-policy/" target="_blank">Cookie Policy</a></li>
+        </ul>
+        <p class="legal">&copy; 2008-2018 Chef Software, Inc. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/scripts-all.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+  <script type="text/javascript">
+    docsearch({
+      apiKey: '3f16191e15b2b4a4b0823c9f856e2de2',
+      indexName: 'chef_sh',
+      inputSelector: '#doc-search',
+      debug: false 
+    });
+  </script>
+</body>
+</html>

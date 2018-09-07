@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>kitchen converge</title>
+<link rel="shortcut icon" type="image/png" href="/images/favicon.ico" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
+  <link rel="stylesheet" href="/css/chef-sh.css" />
+</head>
+
+<body>
+  <div class="off-canvas-wrapper has-sidebar">
+    <div class="off-canvas-content" data-off-canvas-content>
+      <div class="cell small-12">
+        <nav id="utility-bar" class="utility-bar" data-toggler="active">
+  <div class="grid-container">
+    <div class="grid-x align-right">
+      <div class="cell medium-7 utility-bar-wrapper text-right">
+        <button type="button" class="utility-bar-button" data-toggle="utility-bar">
+          <span class="show-for-medium">Explore the <span class="chef-logo"><span class="sr-only">Chef</span></span> Automation Portfolio</span>
+          <span class="show-for-small-only">Chef Automation</span>
+          <span class="arrow"><span class="sr-only">Expand</span></span>
+        </button>
+        <div class="utility-bar-content text-left">
+          <div class="grid-x">
+            <div class="oss-projects grid-x" data-equalizer>
+              <div class="cell medium-4">
+                <a href="https://chef.sh">
+                  <div data-equalizer-watch><img src="/images/chef-logo.svg" alt="Chef" width="131" class="chef"></div>
+                  <p>Ensure configurations are applied consistently in every environment, at any scale.</p>
+                </a>
+              </div>
+              <div class="cell medium-4">
+                <a href="https://inspec.io">
+                  <div data-equalizer-watch><img src="/images/inspec-logo.svg" alt="Inspec" width="133" class="inspec"></div>
+                  <p>Automate the validation of compliance and security in any environment, on any platform.</p>
+                </a>
+              </div>
+              <div class="cell medium-4">
+                <a href="https://habitat.sh">
+                  <div data-equalizer-watch><img src="/images/habitat-logo.svg" alt="Habitat" width="111" class="habitat"></div>
+                  <p>Automate the process of building, deploying, and managing any application in any environment.</p>
+                </a>
+              </div>
+            </div>
+            <div class="automate cell small-12">
+              <div class="cell small-12">
+                <a href="https://automate.chef.io" class="with-arrow-button">
+                  <img src="/images/chef-automate-logo.svg" alt="Chef Automate" width="217" class="chef-automate">
+                  <p>Build, deploy, and manage faster, more efficiently, and with less risk with Chef Automate, the continuous automation platform.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+      </div>
+      <div id="menu" class="cell small-12" data-sticky-container>
+        
+
+<nav data-sticky class="sticky" style="min-width:100%;" data-check-every="0" data-sticky-on="small" data-margin-top="0" data-top-anchor="utility-bar:bottom">
+  <header>
+    <div class="grid-container">
+      <div class="grid-x">
+        <div id="header-logo" class="cell large-3 small-11">
+          <a href="/"><img src="/images/chef-logo.svg" alt="Kitchen Documentation"></a>
+        </div>
+        <div id="header-toggle" data-responsive-toggle="header-menu" data-hide-for="large" class="cell small-1">
+          <div class="valign-small">
+            <button type="button" data-toggle="header-menu" aria-label="Menu"><i aria-hidden="true" class="fas fa-bars fa-lg"></i></button>
+          </div>
+        </div>
+        <div id="header-menu" class="cell large-9 small-12">
+          <ul class="vertical medium-horizontal menu">
+            
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </header>
+</nav>
+
+      </div>
+      <div id="main-content" class="cell small-12" data-sticky-container>
+        <div class="grid-container">
+          <div class="grid-x">
+            <div class="cell medium-3 col-sidebar">
+              
+
+
+<aside class="sticky" data-sticky data-anchor="main-content-col" data-margin-top="4" data-margin-bottom="2">
+  <nav id="sidebar-nav">
+    
+    <div class="search">
+      <form class="basic-form" method="" action="">
+  <input id="doc-search" type="text" name="search" value="" placeholder="Search Documentation">
+</form>
+
+    </div>
+    
+    
+    <div class="nav">
+      <ul class="vertical menu accordion-menu" data-accordion-menu>
+        
+          
+            
+              <li>
+                <a href="">Getting Started</a>
+                <ul class="menu vertical nested is-active">
+                  
+                  <li><a href="/docs/getting-started/00-introduction/">Introduction</a></li>
+                  
+                  <li><a href="/docs/getting-started/01-installing/">Installing</a></li>
+                  
+                  <li><a href="/docs/getting-started/02-getting-help/">Getting Help</a></li>
+                  
+                  <li><a href="/docs/getting-started/03-creating-cookbook/">Creating a Cookbook</a></li>
+                  
+                  <li><a href="/docs/getting-started/04-kitchen-yml/">.kitchen.yml</a></li>
+                  
+                  <li><a href="/docs/getting-started/05-instances/">Instances</a></li>
+                  
+                  <li><a href="/docs/getting-started/06-writing-recipe/">Writing a Recipe</a></li>
+                  
+                  <li class="active"><a href="/docs/getting-started/07-running-converge/">kitchen converge</a></li>
+                  
+                  <li><a href="/docs/getting-started/08-manually-verifying/">Manually Verifying</a></li>
+                  
+                  <li><a href="/docs/getting-started/09-writing-test/">Writing a Test</a></li>
+                  
+                  <li><a href="/docs/getting-started/10-running-verify/">kitchen-verify</a></li>
+                  
+                  <li><a href="/docs/getting-started/11-running-test/">kitchen test</a></li>
+                  
+                  <li><a href="/docs/getting-started/12-adding-platform/">Adding a Platform</a></li>
+                  
+                  <li><a href="/docs/getting-started/13-adding-feature/">Adding a New Feature</a></li>
+                  
+                  <li><a href="/docs/getting-started/14-adding-suite/">Adding a Suite</a></li>
+                  
+                  <li><a href="/docs/getting-started/15-adding-test/">Adding a Test</a></li>
+                  
+                  <li><a href="/docs/getting-started/16-adding-recipe/">Adding a Recipe</a></li>
+                  
+                  <li><a href="/docs/getting-started/17-excluding-platforms/">Excluding Platforms</a></li>
+                  
+                  <li><a href="/docs/getting-started/18-next-steps/">Next Steps</a></li>
+                  
+                </ul>
+              </li>
+            
+          
+            
+              <li>
+                <a href="">Drivers</a>
+                <ul class="menu vertical nested">
+                  
+                  <li><a href="/docs/drivers/vagrant/">kitchen-vagrant</a></li>
+                  
+                </ul>
+              </li>
+            
+          
+            
+              <li>
+                <a href="">Reference</a>
+                <ul class="menu vertical nested">
+                  
+                  <li><a href="/docs/examples/">Examples</a></li>
+                  
+                  <li><a href="/docs/faq/">FAQ</a></li>
+                  
+                  <li><a href="/docs/glossary/">Glossary</a></li>
+                  
+                </ul>
+              </li>
+            
+          
+            
+              <li><a href="">Troubleshooting</a></li>
+            
+          
+        
+      </ul>
+    </div>
+  </nav>
+</aside>
+
+            </div>
+            <div id="main-content-col" class="cell medium-9 col-content">
+              
+<h1>kitchen converge</h1>
+<div class="prose">
+  
+
+<h5 id="kitchen-converge">kitchen converge</h5>
+
+<p>Now that we have a recipe, let&rsquo;s use <code>kitchen converge</code> to see if it works:</p>
+
+<pre><code>$ kitchen converge default-ubuntu-1604
+-----&gt; Starting Kitchen (v1.16.0)
+-----&gt; Converging &lt;default-ubuntu-1604&gt;...
+       Preparing files for transfer
+       Preparing dna.json
+       Resolving cookbook dependencies with Berkshelf 5.6.4...
+       Removing non-cookbook files before transfer
+       Preparing validation.pem
+       Preparing client.rb
+       ubuntu 16.04 x86_64
+       Getting information for chef stable 13.0.118 for ubuntu...
+       downloading https://omnitruck.chef.io/stable/chef/metadata?v=13.0.118&amp;p=ubuntu&amp;pv=16.04&amp;m=x86_64
+         to file /tmp/install.sh.1596/metadata.txt
+       trying wget...
+       sha1     da845676ff2e17b3049ca6e52541389318183f89
+       sha256   650e80ad44584ca48716752d411989ab155845af4af7a50c530155d9718843eb
+       url      https://packages.chef.io/files/stable/chef/13.0.118/ubuntu/16.04/chef_13.0.118-1_amd64.deb
+       version  13.0.118
+       downloaded metadata file looks valid...
+       downloading https://packages.chef.io/files/stable/chef/13.0.118/ubuntu/16.04/chef_13.0.118-1_amd64.deb
+         to file /tmp/install.sh.1596/chef_13.0.118-1_amd64.deb
+       trying wget...
+       Comparing checksum with sha256sum...
+       Installing chef 13.0.118
+       installing with dpkg...
+       Selecting previously unselected package chef.
+(Reading database ... 37825 files and directories currently installed.)
+       Preparing to unpack .../chef_13.0.118-1_amd64.deb ...
+       Unpacking chef (13.0.118-1) ...
+       Setting up chef (13.0.118-1) ...
+       Thank you for installing Chef!
+       Transferring files to &lt;default-ubuntu-1604&gt;
+       Starting Chef Client, version 13.0.118
+       Creating a new client identity for default-ubuntu-1604 using the validator key.
+       resolving cookbooks for run list: [&quot;git_cookbook::default&quot;]
+       Synchronizing Cookbooks:
+         - git_cookbook (0.1.0)
+       Installing Cookbook Gems:
+       Compiling Cookbooks...
+       Converging 1 resources
+       Recipe: git_cookbook::default
+         * apt_package[git] action install (up to date)
+
+       Running handlers:
+       Running handlers complete
+       Chef Client finished, 0/1 resources updated in 01 seconds
+       Finished converging &lt;default-ubuntu-1604&gt; (0m15.55s).
+-----&gt; Kitchen is finished. (0m17.04s)
+</code></pre>
+
+<p>If you are a Chef user then part of the output above should look familiar to you. Here&rsquo;s what happened at a high level:</p>
+
+<ul>
+<li>Chef was installed on the instance</li>
+<li>The <code>git_cookbook</code> files and a minimal Chef configuration were built and uploaded to the instance</li>
+<li>A Chef run was initiated using the run-list and node attributes specified in the <code>.kitchen.yml</code> file</li>
+</ul>
+
+<p>Looking closely at the run, there are two important things we want to note: git was already installed as part of the base image so Chef reports <code>(up to date)</code> as it didn&rsquo;t have to do anything.</p>
+
+<div class="callout">
+<h3 class="callout--title">Pro Tip</h3>
+This highlights a property of configuration management systems, like Chef, called <b>idempotence</b> - in this context, Chef saw that we requested to install git but as it was already installed there was nothing to do. This concept is very useful when thinking about configuration management generally as unlike a bash script, Chef isn't a series of commands but a set of declarations about the desired state.
+</div>
+
+<p>A <strong>converge</strong> will leave the machine running and kitchen automatically uploads changes each converge so that one can iterate rapidly on configuration code. A lot of time and effort has gone into ensuring that the exit code of kitchen is always appropriate. Here is the Kitchen Command Guarantee:</p>
+
+<ul>
+<li>I will always exit with code <strong>0</strong> if my operation was successful.</li>
+<li>I will always exit with a non-zero code if <strong>any</strong> part of my operation was not successful.</li>
+<li>Any behavior to the contrary <strong>is a bug</strong>.</li>
+</ul>
+
+<p>This exit code behavior is a fundamental prerequisite for any tool working in a Continuous Integration (CI) environment.</p>
+
+<div class="sidebar--footer">
+<a class="button primary-cta" href="/docs/getting-started/manually-verifying">Next - Manually Verifying</a>
+<a class="sidebar--footer--back" href="/docs/getting-started/writing-recipe">Back to previous step</a>
+</div>
+
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer" class="cell small-12">
+        <div class="grid-x">
+          <div class="cell small-12">
+            <nav>
+              
+<footer>
+  <div class="grid-container">
+    <div class="grid-x align-middle">
+      <div class="cell small-12 large-3 logo"><a href="/"><img src="/images/chef-logo-light.svg" alt="Kitchen Documentation"></a></div>
+      <div class="cell small-12 large-9">
+        <ul class="menu vertical medium-horizontal">
+          <li><a href="https://www.chef.io/online-master-agreement/" target="_blank">Licensing</a></li>
+          <li><a href="https://www.chef.io/terms-of-service/" target="_blank">Terms &amp; Conditions</a></li>
+          <li><a href="https://www.chef.io/trademark-policy/" target="_blank">Trademark Policy</a></li>
+          <li><a href="https://www.chef.io/privacy-policy/" target="_blank">Privacy Policy</a></li>
+          <li><a href="https://www.chef.io/cookie-policy/" target="_blank">Cookie Policy</a></li>
+        </ul>
+        <p class="legal">&copy; 2008-2018 Chef Software, Inc. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/scripts-all.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+  <script type="text/javascript">
+    docsearch({
+      apiKey: '3f16191e15b2b4a4b0823c9f856e2de2',
+      indexName: 'chef_sh',
+      inputSelector: '#doc-search',
+      debug: false 
+    });
+  </script>
+</body>
+</html>

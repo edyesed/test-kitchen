@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on Kitchen Documentation</title>
+    <link>/docs/</link>
+    <description>Recent content in Docs on Kitchen Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>.kitchen.yml</title>
+      <link>/docs/getting-started/04-kitchen-yml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/04-kitchen-yml/</guid>
+      <description>.kitchen.yml Let&amp;rsquo;s turn our attention to the .kitchen.yml file for a minute. While ChefDK may have created the initial file automatically, it&amp;rsquo;s expected that you will read and edit this file. After all, you know what you want to test&amp;hellip; right?
+For the moment let&amp;rsquo;s say we only care about running our Chef cookbook on Ubuntu 16.04 with Chef version 13. In that case, we can edit the .kitchen.yml file so that we pin the version of Chef and trim the list of platforms to only one entry like so:</description>
+    </item>
+    
+    <item>
+      <title>Adding a New Feature</title>
+      <link>/docs/getting-started/13-adding-feature/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/13-adding-feature/</guid>
+      <description>Adding a Feature Now we&amp;rsquo;re going to add limited support to our Git cookbook for a read-only Git daemon. This will walk us through adding a new suite, recipe, and corresponding set of tests.
+ We&amp;rsquo;re not looking to make the perfect Chef cookbook in this guide. There will be more than a couple style and code smells as we go but this is to keep us focused on driving our tool.</description>
+    </item>
+    
+    <item>
+      <title>Adding a Platform</title>
+      <link>/docs/getting-started/12-adding-platform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/12-adding-platform/</guid>
+      <description>Now that we have Ubuntu working, let&amp;rsquo;s add support for CentOS to our cookbook. This shouldn&amp;rsquo;t be too bad. Open .kitchen.yml in your editor and the centos-7 line to your platforms list so that it resembles:
+--- driver: name: vagrant provisioner: name: chef_zero verifier: name: inspec platforms: - name: ubuntu-16.04 - name: centos-7 suites: - name: default run_list: - recipe[git_cookbook::default] verifier: inspec_tests: - test/smoke/default attributes: Now let&amp;rsquo;s check the status of our instances:</description>
+    </item>
+    
+    <item>
+      <title>Adding a Recipe</title>
+      <link>/docs/getting-started/16-adding-recipe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/16-adding-recipe/</guid>
+      <description>As we&amp;rsquo;ve already added our tests, we have a pretty good idea of what needs to happen.
+With this solution in mind we&amp;rsquo;ll create a file called recipes/server.rb with the following:
+# the default recipe is implied if only the cookbook name is provided # effectively `include_recipe &amp;#34;git_cookbook::default&amp;#34;` include_recipe &amp;#34;git_cookbook&amp;#34; # install the above `daemon_pkg` package &amp;#39;git-daemon-run&amp;#39; # create our data directory directory &amp;#39;/opt/git&amp;#39; # setup the systemd unit (service) with the above `daemon_bin`, enable, and # start it systemd_unit &amp;#39;git-daemon.</description>
+    </item>
+    
+    <item>
+      <title>Adding a Suite</title>
+      <link>/docs/getting-started/14-adding-suite/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/14-adding-suite/</guid>
+      <description>Adding a Suite We&amp;rsquo;re going to call our new suite &amp;quot;server&amp;quot; by editing .kitchen.yml in your editor of choice so that it looks similar to:
+--- driver: name: vagrant provisioner: name: chef_zero verifier: name: inspec platforms: - name: ubuntu-16.04 - name: centos-7 suites: - name: default run_list: - recipe[git_cookbook::default] verifier: inspec_tests: - test/smoke/default attributes: - name: server run_list: - recipe[git_cookbook::server] verifier: inspec_tests: - test/smoke/server attributes: Now run kitchen list to see our new suite in action:</description>
+    </item>
+    
+    <item>
+      <title>Adding a Test</title>
+      <link>/docs/getting-started/15-adding-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/15-adding-test/</guid>
+      <description>Adding a Test Our first test was created for us automatically for us by our cookbook generator so here we will create the folders and files manually.
+First we&amp;rsquo;re going to create a directory for our test file:
+mkdir -p test/smoke/server  Next, create a file called test/smoke/server/git_daemon_test.rb with the following:
+# # encoding: utf-8 # Inspec test for recipe git_cookbook::server describe port(9418) do it { should be_listening } end describe service(&amp;#39;git-daemon&amp;#39;) do it { should be_enabled } it { should be_running } end This test checks that a process is listening on port 9418 and a service called &amp;ldquo;git-daemon&amp;rdquo; is installed, enabled, and running.</description>
+    </item>
+    
+    <item>
+      <title>Creating a Cookbook</title>
+      <link>/docs/getting-started/03-creating-cookbook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/03-creating-cookbook/</guid>
+      <description>Creating a cookbook In order to keep our example as simple as possible let&amp;rsquo;s create a Chef cookbook to automate the installation and management of the Git distributed version control tool. It&amp;rsquo;s true that there is already a very capable Git cookbook available on the Chef Supermarket but this simple example will us to show all the features of test-kitchen in a workflow.
+First of all, let&amp;rsquo;s generate a cookbook skeleton.</description>
+    </item>
+    
+    <item>
+      <title>Examples</title>
+      <link>/docs/examples/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/examples/</guid>
+      <description>We&amp;rsquo;ve collected a variety of examples to highlight all the different things one can do with kitchen.
+kitchen-vagrant The default driver with a default provider of VirtualBox. Here is a fully annotated example of the .kitchen.yml generated by chef generate
+--- # Configure the driver (cloud/hypervisor) driver: name: vagrant #ec2, dokken, libvirt # provider: virtualbox # Configure the provisioner (config management) provisioner: name: chef_zero #chef_zero, chef_solo, puppet_apply, ansible_playbook, shell # Configure the verifier (testing framework) verifier: name: inspec # Enumerate platforms # A platform represents a single configuration of an operating system # While this is often 1:1, the names allow this to be customizable # At least 1 platform is **required** platforms: # Drivers may support defaults that automatically # map certain names to an image for the given driver - name: ubuntu-16.</description>
+    </item>
+    
+    <item>
+      <title>Excluding Platforms</title>
+      <link>/docs/getting-started/17-excluding-platforms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/17-excluding-platforms/</guid>
+      <description>Excluding Platforms Perhaps our enterprise has standardized on Ubuntu 16.04 for server tasks so we really only care about testing that our server recipe works on that platform. That said we still want to be able to test our default recipe against CentOS.
+Let&amp;rsquo;s give kitchen list a look:
+$ kitchen list Instance Driver Provisioner Verifier Transport Last Action Last Error default-ubuntu-1604 Vagrant ChefZero Inspec Ssh &amp;lt;Not Created&amp;gt; &amp;lt;None&amp;gt; default-centos-7 Vagrant ChefZero Inspec Ssh &amp;lt;Not Created&amp;gt; &amp;lt;None&amp;gt; server-ubuntu-1604 Vagrant ChefZero Inspec Ssh Verified &amp;lt;None&amp;gt; server-centos-7 Vagrant ChefZero Inspec Ssh &amp;lt;Not Created&amp;gt; &amp;lt;None&amp;gt;   Add a platform name to an excludes array in a suite to remove the platform/suite combination from testing.</description>
+    </item>
+    
+    <item>
+      <title>FAQ</title>
+      <link>/docs/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/faq/</guid>
+      <description>FAQ These are frequently asked questions or tips that don&amp;rsquo;t have a better home just yet.
+How do I add another driver other than Vagrant? If you&amp;rsquo;re using ChefDK, check for itchef gem list | grep $DRIVER you need to make sure the driver exists, if it does:
+~$ gem install kitchen-openstack # for instance ~$ vi cookbooks/demo/.kitchen.yml # wherever your .kitchen.yml is for your cookbook Examples:
+ kitchen-openstack kitchen-digitalocean  Edit the .</description>
+    </item>
+    
+    <item>
+      <title>Getting Help</title>
+      <link>/docs/getting-started/02-getting-help/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/02-getting-help/</guid>
+      <description>Getting Help Use the kitchen help for a quick reminder of what the kitchen command provides:
+$ kitchen help Commands: kitchen console # Kitchen Console!  kitchen converge [INSTANCE|REGEXP|all] # Change instance state to converge. Use a provisioner to configure one or more instances  kitchen create [INSTANCE|REGEXP|all] # Change instance state to create. Start one or more instances  kitchen destroy [INSTANCE|REGEXP|all] # Change instance state to destroy. Delete all information for one or more instances  kitchen diagnose [INSTANCE|REGEXP|all] # Show computed diagnostic configuration  kitchen exec INSTANCE|REGEXP -c REMOTE_COMMAND # Execute command on one or more instance  kitchen help [COMMAND] # Describe available commands or one specific command  kitchen init # Adds some configuration to your cookbook so Kitchen can rock  kitchen list [INSTANCE|REGEXP|all] # Lists one or more instances  kitchen login INSTANCE|REGEXP # Log in to one instance  kitchen package INSTANCE|REGEXP # package an instance  kitchen setup [INSTANCE|REGEXP|all] # Change instance state to setup.</description>
+    </item>
+    
+    <item>
+      <title>Glossary</title>
+      <link>/docs/glossary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/glossary/</guid>
+      <description> Berksfile - the file berks loads to determine sources and dependencies Berkshelf - a tool to resolve cookbook dependencies hypervisor - a piece of software that allows one to create and run virtual machines Vagrant - a piece of software that makes abstracts away hypervisor details to provide a consistent experience and interface to virtual machines virtual machine - a machine that is virtualized, i.e. running on a hypervisor VirtualBox - a freely available hypervisor from Oracle VMware Fusion - a for-pay hypervisor from VMware exclusively for macOS/OS X VMware Workstation - a for-pay hypervisor from VMware for Linux and Windows regular expression  </description>
+    </item>
+    
+    <item>
+      <title>Installing</title>
+      <link>/docs/getting-started/01-installing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/01-installing/</guid>
+      <description>Installing As this is a quick start guide, it doesn&amp;rsquo;t assume any great familiarity with Chef or Ruby and takes you through the process of writing a Chef cookbook with automated testing as standard. In order to follow this guide, we&amp;rsquo;ll need a few tools first.
+Pre-requisites  64 bit operating system CPU Virtualization enabled  In order to virtualize a 64 bit operating system, one must also be running a 64 bit operating system.</description>
+    </item>
+    
+    <item>
+      <title>Instances</title>
+      <link>/docs/getting-started/05-instances/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/05-instances/</guid>
+      <description>Instances What is this default-ubuntu-1604 thing and what is an &amp;ldquo;Instance&amp;rdquo;?
+A Kitchen Instance is a combination of a Suite and a Platform as laid out in your .kitchen.yml file. Kitchen has auto-named our only instance by combining the Suite name (&amp;quot;default&amp;quot;) and the Platform name (&amp;quot;ubuntu-16.04&amp;quot;) into a form that is safe for DNS and hostname records, namely &amp;quot;default-ubuntu-1604&amp;quot;.
+Let&amp;rsquo;s spin this Instance up to see what happens. We&amp;rsquo;re going to be painfully explicit and ask kitchen to only create the default-ubuntu-1604 instance:</description>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <link>/docs/getting-started/00-introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/00-introduction/</guid>
+      <description>Introduction The best way to understand what kitchen does is to see it in action so we&amp;rsquo;re going to use it to help us write a simple Chef cookbook. This cookbook will be complete with tests that verify the cookbook does what it&amp;rsquo;s supposed to do. Kitchen comes at the process of software development with an approach that embraces the idea that writing the tests first, watching them fail, and then writing the code to make them pass is a great way to go.</description>
+    </item>
+    
+    <item>
+      <title>Manually Verifying</title>
+      <link>/docs/getting-started/08-manually-verifying/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/08-manually-verifying/</guid>
+      <description>If you&amp;rsquo;re a skeptical person then you might be asking:
+ &amp;ldquo;How can we be sure that Git was actually installed?&amp;rdquo;
+ Let&amp;rsquo;s verify this right now.
+Kitchen has a login subcommand for just these kinds of situations:
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-75-generic x86_64) * Documentation: https://help.ubuntu.com * Management: https://landscape.canonical.com * Support: https://ubuntu.com/advantage 0 packages can be updated. 0 updates are security updates. Last login: Mon May 15 14:56:09 2017 from 10.</description>
+    </item>
+    
+    <item>
+      <title>Next Steps</title>
+      <link>/docs/getting-started/18-next-steps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/18-next-steps/</guid>
+      <description>Next Steps This concludes the getting started guide for kitchen. Hopefully you are now more comfortable with Kitchen&amp;rsquo;s basic usage, fundamental concepts, and a feel for a testing workflow.
+From here, there are a few resources that can help you along your infrastructure testing journey:
+ Jump in the #test-kitchen channel on Chef Community Slack Check out the test-kitchen repo on GitHub Submit an issue Write a blog post describing getting started with kitchen, or an interesting problem kitchen has allowed you to solve  Everyone can contribute to making kitchen better, including the documentation.</description>
+    </item>
+    
+    <item>
+      <title>Writing a Recipe</title>
+      <link>/docs/getting-started/06-writing-recipe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/06-writing-recipe/</guid>
+      <description> Writing a Recipe Here we go, time to automate our Git installation! Open recipes/default.rb in your editor of choice and add the following:
+package &amp;#34;git&amp;#34; Hrm. That was a bit too easy. Let&amp;rsquo;s put our code to the test right away!
+Next - Running Kitchen Converge Back to previous step  </description>
+    </item>
+    
+    <item>
+      <title>Writing a Test</title>
+      <link>/docs/getting-started/09-writing-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/09-writing-test/</guid>
+      <description>Being able to manually verify the Chef run is great but it would be even better if we had an executable test that would fail if our assumptions were ever proven to be false. Remember how we manually verified that Git was installed in the previous section? Seems like a pretty decent first test to me!
+Kitchen presumes you want to test things and supports a variety of different frameworks for doing so.</description>
+    </item>
+    
+    <item>
+      <title>kitchen converge</title>
+      <link>/docs/getting-started/07-running-converge/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/07-running-converge/</guid>
+      <description>kitchen converge Now that we have a recipe, let&amp;rsquo;s use kitchen converge to see if it works:
+$ kitchen converge default-ubuntu-1604 -----&amp;gt; Starting Kitchen (v1.16.0) -----&amp;gt; Converging &amp;lt;default-ubuntu-1604&amp;gt;... Preparing files for transfer Preparing dna.json Resolving cookbook dependencies with Berkshelf 5.6.4... Removing non-cookbook files before transfer Preparing validation.pem Preparing client.rb ubuntu 16.04 x86_64 Getting information for chef stable 13.0.118 for ubuntu... downloading https://omnitruck.chef.io/stable/chef/metadata?v=13.0.118&amp;amp;p=ubuntu&amp;amp;pv=16.04&amp;amp;m=x86_64 to file /tmp/install.sh.1596/metadata.txt trying wget... sha1 da845676ff2e17b3049ca6e52541389318183f89 sha256 650e80ad44584ca48716752d411989ab155845af4af7a50c530155d9718843eb url https://packages.</description>
+    </item>
+    
+    <item>
+      <title>kitchen test</title>
+      <link>/docs/getting-started/11-running-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/11-running-test/</guid>
+      <description>kitchen test Now it&amp;rsquo;s time to introduce to the test meta-action which helps you automate all the previous actions so far into one command. Recall that we currently have our instance in a &amp;ldquo;verified&amp;rdquo; state. With this in mind, let&amp;rsquo;s run kitchen test:
+$ kitchen test default-ubuntu-1604 -----&amp;gt; Starting Kitchen (v1.16.0) -----&amp;gt; Cleaning up any prior instances of &amp;lt;default-ubuntu-1604&amp;gt; -----&amp;gt; Destroying &amp;lt;default-ubuntu-1604&amp;gt;... ==&amp;gt; default: Forcing shutdown of VM... ==&amp;gt; default: Destroying VM and associated drives.</description>
+    </item>
+    
+    <item>
+      <title>kitchen-vagrant</title>
+      <link>/docs/drivers/vagrant/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/drivers/vagrant/</guid>
+      <description>Full example reference can be found here
+--- driver: name: vagrant provider: virtualbox provisioner: name: chef_zero verifier: name: inspec platforms: - name: ubuntu-16.04 - name: centos-7 - name: openbsd-5.6 driver: box: openbsd-5.6 box_url: http://url.tld/openbsd-5.6.box suites: - name: default attributes: cookbook: attribute: &#39;value&#39; run_list: - recipe[cookbook::default]  </description>
+    </item>
+    
+    <item>
+      <title>kitchen-verify</title>
+      <link>/docs/getting-started/10-running-verify/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/getting-started/10-running-verify/</guid>
+      <description>kitchen verify In order to execute our test, we use the command kitchen verify:
+$ kitchen verify default-ubuntu-1604 -----&amp;gt; Starting Kitchen (v1.16.0) Please report a bug if this causes problems. -----&amp;gt; Verifying &amp;lt;default-ubuntu-1604&amp;gt;... Loaded tests from test/smoke/default Profile: tests from test/smoke/default Version: (not specified) Target: ssh://vagrant@127.0.0.1:2222 System Package ✔ git should be installed Test Summary: 1 successful, 0 failures, 0 skipped Finished verifying &amp;lt;default-ubuntu-1604&amp;gt; (0m0.77s). -----&amp;gt; Kitchen is finished. (0m5.</description>
+    </item>
+    
+  </channel>
+</rss>
